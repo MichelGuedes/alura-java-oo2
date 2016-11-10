@@ -1,4 +1,4 @@
-class Conta {
+abstract class Conta {
 	private double saldo;
 
 	public double getSaldo() {
@@ -17,9 +17,7 @@ class Conta {
 		}
 	}
 
-	public void atualiza(double taxa) {
-		this.setSaldo(this.getSaldo() + this.getSaldo() * taxa);
-	}
+	abstract void atualiza(double taxa);
 
 	public void setSaldo(double saldo) {
 		if (saldo > 0) {
@@ -32,7 +30,7 @@ class Conta {
 
 class TestaContas {
 	public static void main(String[] args) {
-		Conta c = new Conta();
+		Conta c = new ContaCorrente();
 		ContaCorrente cc = new ContaCorrente();
 		ContaPoupanca cp = new ContaPoupanca();
 
