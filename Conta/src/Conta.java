@@ -8,6 +8,8 @@ abstract class Conta {
 	public void deposita(double valor) {
 		if (valor > 0) {
 			this.setSaldo(this.getSaldo() + valor);
+		}else{
+			throw new ValorInvalidoException("Valor de depósito é inválido: " + valor);
 		}
 	}
 
@@ -50,9 +52,9 @@ class TestaContas {
 		at.atualizaContas(cc);
 		at.atualizaContas(cp);
 
-		System.out.println("Saldo da conta: " + c.getSaldo());
-		System.out.println("Saldo da conta corrente: " + cc.getSaldo());
-		System.out.println("Saldo da conta poupanca: " + cp.getSaldo());
+		System.out.printf("Saldo da conta: %.2f \n", c.getSaldo());
+		System.out.printf("Saldo da conta corrente : %.2f \n", cc.getSaldo());
+		System.out.printf("Saldo da conta poupanca: %.2f \n", cp.getSaldo());
 
 		System.out.println("Saldo total de todas as contas: " + at.getSaldoTotal());
 
