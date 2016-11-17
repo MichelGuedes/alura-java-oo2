@@ -9,7 +9,7 @@ abstract class Conta {
 		if (valor > 0) {
 			this.setSaldo(this.getSaldo() + valor);
 		}else{
-			throw new ValorInvalidoException("Valor de depósito é inválido: " + valor);
+			throw new ValorInvalidoException(valor);
 		}
 	}
 

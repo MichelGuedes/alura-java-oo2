@@ -9,4 +9,8 @@ public class ValorInvalidoException extends RuntimeException {
 		super(arg0);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public ValorInvalidoException(double valor){
+		super("Valor informado é inválido: " + valor);
+	}
 }
